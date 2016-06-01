@@ -96,7 +96,7 @@ ifeq ($(CONFIG_EXT_CLK), y)
 EXTRA_CFLAGS += -DCONFIG_EXT_CLK
 endif
 
-SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ | sed -e s/ppc/powerpc/ | sed -e s/armv.l/arm/)
+SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ | sed -e s/ppc/powerpc/ | sed -e s/armv.l/arm/ | sed -e s/aarch64.*/arm64/)
 ARCH ?= $(SUBARCH)
 CROSS_COMPILE ?=
 KVER  := $(shell uname -r)
